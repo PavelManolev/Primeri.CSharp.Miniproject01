@@ -1,12 +1,33 @@
 ﻿using System;
 
-namespace colours
+namespace Colors
 {
-	public class MyClass
+	public class ForCLI
 	{
-		public MyClass ()
+		public ForCLI ()
 		{
 		}
+		public void Default ()
+		{
+			Console.ForegroundColor = ConsoleColor.Gray;
+		}
+
+		public void Prompt ()
+		{
+			Console.ForegroundColor = ConsoleColor.DarkGreen;
+		}
+	
+		public void Command ()
+		{
+			Console.ForegroundColor = ConsoleColor.DarkYellow;
+		}
+
+		public void Result ()
+		{
+			Console.ForegroundColor = ConsoleColor.White;
+		}
+	
+	
 	}
 }
 
