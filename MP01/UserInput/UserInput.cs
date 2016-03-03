@@ -16,7 +16,7 @@ namespace UserInput
 		public void sayHello ()
 		{
 			_c.Default (); 
-			Console.WriteLine ("добре дошли в " + about.shortName + "\n" + about.version + "\n");
+			Console.WriteLine ("Добре дошли в " + about.shortName + "\n" + about.version + "\n");
 		}
 		public void getUserCommands ()
 		{
@@ -28,11 +28,21 @@ namespace UserInput
 				_c.Command (); _command = Console.ReadLine ();
 
 				//Проверка за налични команди
-				if ( _command.ToLower().Contains ("яма"))  _calc.F01.Calc ( _command);
-					
+				if ( _command.ToLower().Contains ("яма"))  		_calc.F01.Calc ( _command );
+				if ( _command.ToLower().Contains ("въгъл")) 	 _calc.F02.calc ( _command );
+				if ( _command.ToLower().Contains ("иъгъл"))		 _calc.F03.calc ( _command );
 
-				if ( _command.ToLower().Contains ("команда2")) Console.WriteLine (" Стартирана е Команда 2\n");
-				if ( _command.ToLower().Contains ("команда3")) Console.WriteLine (" Стартирана е Команда 3\n");
+				if ( _command.ToLower().Contains ("помощ") ||  
+					 _command.ToLower() == "п")		 		_calc.commands ( );
+
+				if (_command.ToLower() ==  "изчисти" ||  
+					_command.ToLower() == "и") 
+				{
+					Console.Clear ();
+
+					_c.Default (); 
+					Console.WriteLine ("Добре дошли в " + about.shortName + "\n" + about.version + "\n");
+				}
 
 			} while (_command.ToLower() != "изход");
 		}
